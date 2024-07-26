@@ -2,7 +2,19 @@
   <div
     class="h-16 w-full px-4 rounded-md bg-gradient-to-br from-slate-600 to-slate-700 flex justify-end items-center dark:text-slate-100 drop-shadow-md"
   >
-    <button>
+    <button class="px-4 py-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+      </svg>
+    </button>
+    <button class="px-4 py-2">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

@@ -45,9 +45,9 @@
           "screenLarge": 1
         },
         "rowStart": {
-          "screenSmall": 3,
-          "screenMedium": 3,
-          "screenLarge": 3
+          "screenSmall": 1,
+          "screenMedium": 1,
+          "screenLarge": 1
         }
       }
     }
