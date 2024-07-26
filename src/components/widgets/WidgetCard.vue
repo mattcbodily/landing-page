@@ -7,7 +7,7 @@ const handleDragStart = (event) => {
 </script>
 
 <template>
-  <div 
+  <div
     class="p-4 text-slate-100 rounded-md drop-shadow-md"
     draggable="true"
     @dragstart="handleDragStart($event)"

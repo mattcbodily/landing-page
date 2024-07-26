@@ -11,7 +11,7 @@ const getTime = () => {
   let hour = time.getHours()
   let minutes = time.getMinutes()
   let amPm = 'AM'
- 
+
   if (hour >= 12) {
     if (hour > 12) hour -= 12
 
@@ -20,10 +20,10 @@ const getTime = () => {
     hour = 12
     amPm = 'AM'
   }
- 
+
   hour = hour < 10 ? hour : hour
   minutes = minutes < 10 ? '0' + minutes : minutes
- 
+
   currentTime.value = `${hour}:${minutes} ${amPm}`
 }
 
@@ -39,8 +39,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <WidgetCard 
-    class="flex items-center justify-center col-span-2 row-span-2 bg-gradient-to-br from-teal-500 to-emerald-600" 
+  <WidgetCard
+    class="flex items-center justify-center col-span-2 row-span-2 bg-gradient-to-br from-teal-500 to-emerald-600"
   >
     <p class="text-3xl text-center font-extrabold">{{ currentTime }}</p>
   </WidgetCard>
