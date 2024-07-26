@@ -1,0 +1,55 @@
+{
+  "widgets": [
+    {
+      "uuid": "aae1b9fd-85a3-4c44-a9ab-d0735e3cd2ca",
+      "component": "Clock",
+      "order": 1,
+      "position": {
+        "colStart": {
+          "screenSmall": 1,
+          "screenMedium": 1,
+          "screenLarge": 1
+        },
+        "rowStart": {
+          "screenSmall": 1,
+          "screenMedium": 1,
+          "screenLarge": 1
+        }
+      }
+    },
+    {
+      "uuid": "fa05b7e6-c942-40f1-99f2-161fc7d34c98",
+      "component": "Pomodoro",
+      "order": 2,
+      "position": {
+        "colStart": {
+          "screenSmall": 3,
+          "screenMedium": 3,
+          "screenLarge": 3
+        },
+        "rowStart": {
+          "screenSmall": 1,
+          "screenMedium": 1,
+          "screenLarge": 1
+        }
+      }
+    },
+    {
+      "uuid": "86f61d5d-0d9c-41ec-8326-3755494a046a",
+      "component": "TodoList",
+      "order": 3,
+      "position": {
+        "colStart": {
+          "screenSmall": 1,
+          "screenMedium": 1,
+          "screenLarge": 1
+        },
+        "rowStart": {
+          "screenSmall": 3,
+          "screenMedium": 3,
+          "screenLarge": 3
+        }
+      }
+    }
+  ]
+}
