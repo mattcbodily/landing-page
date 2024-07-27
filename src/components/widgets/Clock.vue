@@ -2,35 +2,29 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 import WidgetCard from './WidgetCard.vue'
 
+const currentDate = ref(null)
 const currentTime = ref(null)
 
 let clockInterval
 
 const getTime = () => {
-  const time = new Date()
-  let hour = time.getHours()
-  let minutes = time.getMinutes()
-  let amPm = 'AM'
+  const now = new Date()
 
-  if (hour >= 12) {
-    if (hour > 12) hour -= 12
+  currentDate.value = new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: '2-digit',
+  }).format(now)
 
-    amPm = 'PM'
-  } else if (hour === 0) {
-    hour = 12
-    amPm = 'AM'
-  }
-
-  hour = hour < 10 ? hour : hour
-  minutes = minutes < 10 ? '0' + minutes : minutes
-
-  currentTime.value = `${hour}:${minutes} ${amPm}`
+  currentTime.value = new Intl.DateTimeFormat('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+  }).format(now)
 }
 
 onMounted(() => {
   getTime()
 
-  clockInterval = setInterval(getTime, 30000)
+  clockInterval = setInterval(getTime, 60000)
 })
 
 onUnmounted(() => {
@@ -40,9 +34,10 @@ onUnmounted(() => {
 
 <template>
   <WidgetCard
-    class="flex items-center justify-center col-span-2 row-span-2 bg-gradient-to-br from-teal-500 to-emerald-600"
+    class="flex flex-col items-center justify-center gap-1 col-span-2 row-span-2 bg-gradient-to-br from-teal-500 to-emerald-600"
     id="clock"
   >
-    <p class="text-3xl text-center font-extrabold">{{ currentTime }}</p>
+    <p class="text-lg font-semibold">{{ currentDate }}</p>
+    <p class="text-3xl font-extrabold">{{ currentTime }}</p>
   </WidgetCard>
 </template>
