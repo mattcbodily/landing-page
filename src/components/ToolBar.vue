@@ -1,8 +1,8 @@
 <template>
   <div
-    class="h-16 w-full max-w-md px-4 mx-auto rounded-md bg-gradient-to-br from-slate-600 to-slate-700 flex justify-end items-center dark:text-slate-100 drop-shadow-md"
+    class="fixed inset-x-0 bottom-4 h-fit w-fit p-2 mx-auto rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 dark:text-slate-100 drop-shadow-md"
   >
-    <button class="px-4 py-2">
+    <button class="p-2 rounded-lg hover:bg-emerald-600 transition-all">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -14,7 +14,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
       </svg>
     </button>
-    <button class="px-4 py-2">
+    <button class="p-2 rounded-lg hover:bg-emerald-600 transition-all">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

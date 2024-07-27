@@ -23,7 +23,5 @@ const widgetMap = {
       <component :is="widgetMap[widget.widget]" :widget-position="{ x: widget.x, y: widget.y }"></component>
     </template>
   </div>
-  <div class="fixed bottom-4 w-full px-4">
-    <ToolBar />
-  </div>
+  <ToolBar />
 </template>
