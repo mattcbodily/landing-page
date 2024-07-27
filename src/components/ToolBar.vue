@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-16 w-full px-4 rounded-md bg-gradient-to-br from-slate-600 to-slate-700 flex justify-end items-center dark:text-slate-100 drop-shadow-md"
+    class="h-16 w-full max-w-md px-4 mx-auto rounded-md bg-gradient-to-br from-slate-600 to-slate-700 flex justify-end items-center dark:text-slate-100 drop-shadow-md"
   >
     <button class="px-4 py-2">
       <svg

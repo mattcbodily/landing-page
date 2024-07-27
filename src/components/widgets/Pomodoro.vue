@@ -51,8 +51,8 @@ onUnmounted(() => {
 
 <template>
   <WidgetCard
-    class="flex flex-col justify-around bg-gradient-to-br from-cyan-500 to-sky-700 col-span-2 row-span-2"
     id="pomodoro"
+    class="h-40 w-48 flex flex-col justify-around bg-gradient-to-br from-cyan-500 to-sky-700"
   >
     <p class="text-3xl text-center font-extrabold">{{ formattedTimeLeft }}</p>
     <div class="space-y-2">

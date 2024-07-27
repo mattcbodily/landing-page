@@ -26,7 +26,7 @@ const deleteTodo = (uuid) => {
 <template>
   <WidgetCard
     id="todo-list"
-    class="bg-gradient-to-br from-violet-500 to-indigo-600 col-span-4 row-span-4 space-y-2"
+    class="h-80 w-96 bg-gradient-to-br from-violet-500 to-indigo-600 space-y-2"
   >
     <form class="flex items-center" @submit.prevent>
       <input

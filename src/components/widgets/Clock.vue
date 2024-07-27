@@ -1,6 +1,8 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
+import { defineProps, onMounted, onUnmounted, ref } from 'vue'
 import WidgetCard from './WidgetCard.vue'
+
+const props = defineProps(['widgetPosition'])
 
 const currentDate = ref(null)
 const currentTime = ref(null)
@@ -34,8 +36,9 @@ onUnmounted(() => {
 
 <template>
   <WidgetCard
-    class="flex flex-col items-center justify-center gap-1 col-span-2 row-span-2 bg-gradient-to-br from-teal-500 to-emerald-600"
     id="clock"
+    class="h-40 w-48 flex flex-col items-center justify-center gap-1 bg-gradient-to-br from-teal-500 to-emerald-600"
+    :widget-position="props.widgetPosition"
   >
     <p class="text-lg font-semibold">{{ currentDate }}</p>
     <p class="text-3xl font-extrabold">{{ currentTime }}</p>
