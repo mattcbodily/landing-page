@@ -56,7 +56,7 @@ onUnmounted(() => {
     class="h-40 w-48 flex flex-col justify-around bg-gradient-to-br from-cyan-500 to-sky-700"
     :widget-data="props.widgetData"
   >
-    <p class="text-3xl text-center font-extrabold">{{ formattedTimeLeft }}</p>
+    <p class="text-3xl text-center font-extrabold select-none">{{ formattedTimeLeft }}</p>
     <div class="space-y-2">
       <div class="flex gap-1">
         <button

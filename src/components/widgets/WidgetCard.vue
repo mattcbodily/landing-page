@@ -10,6 +10,7 @@ const props = defineProps(['widgetData'])
 const card = ref(null)
 
 const { style } = useDraggable(card, {
+  containerElement: document.querySelector('#widget-grid'),
   initialValue: {
     x: props.widgetData.x,
     y: props.widgetData.y,
