@@ -1,8 +1,18 @@
+<script setup>
+import { ref } from 'vue'
+import AddWidgetMenu from './AddWidgetMenu.vue'
+
+const showAddWidgetMenu = ref(false)
+</script>
+
 <template>
   <div
     class="fixed inset-x-0 bottom-4 h-fit w-fit p-2 mx-auto rounded-lg bg-gradient-to-br from-slate-600 to-slate-700 dark:text-slate-100 drop-shadow-md"
   >
-    <button class="p-2 rounded-lg hover:bg-emerald-600 transition-all">
+    <button
+      class="p-2 rounded-lg hover:bg-emerald-600 transition-all"
+      @click="showAddWidgetMenu = !showAddWidgetMenu"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -35,5 +45,6 @@
         />
       </svg>
     </button>
+    <AddWidgetMenu v-show="showAddWidgetMenu" @add-widget="showAddWidgetMenu = false" />
   </div>
 </template>

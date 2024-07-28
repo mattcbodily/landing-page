@@ -1,11 +1,21 @@
 import { defineStore } from 'pinia'
 import { useStorage } from '@vueuse/core'
+import { v4 as uuidv4 } from 'uuid'
 
 export const useWidgetStore = defineStore('widgets', () => {
   const widgets = useStorage('widget-store', [])
 
+  const addWidget = (widget) => {
+    widgets.value.push({
+      uuid: uuidv4(),
+      widget,
+      x: 16 * (widgets.value.length + 1),
+      y: 16 * (widgets.value.length + 1),
+    })
+  }
+
   const updateWidgetPosition = (widget, position) => {
-    const foundWidget = widgets.value.find(element => element.widget === widget)
+    const foundWidget = widgets.value.find((element) => element.widget === widget)
 
     if (foundWidget) {
       foundWidget.x = position.x
@@ -13,5 +23,5 @@ export const useWidgetStore = defineStore('widgets', () => {
     }
   }
 
-  return { widgets, updateWidgetPosition }
+  return { widgets, addWidget, updateWidgetPosition }
 })
