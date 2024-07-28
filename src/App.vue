@@ -17,10 +17,7 @@ const widgetMap = {
 <template>
   <div class="min-h-screen p-4 bg-slate-100 dark:bg-slate-800" id="widget-grid">
     <template v-for="widget in widgetStore.widgets" :key="widget.uuid">
-      <component
-        :is="widgetMap[widget.widget]"
-        :widget-position="{ x: widget.x, y: widget.y }"
-      ></component>
+      <component :is="widgetMap[widget.widget]" :widget-data="widget"> </component>
     </template>
   </div>
   <ToolBar />

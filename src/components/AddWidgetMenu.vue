@@ -1,5 +1,4 @@
 <script setup>
-import { defineEmits } from 'vue'
 import { useWidgetStore } from '@/stores/widget'
 
 const widgetMap = {

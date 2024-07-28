@@ -14,8 +14,8 @@ export const useWidgetStore = defineStore('widgets', () => {
     })
   }
 
-  const updateWidgetPosition = (widget, position) => {
-    const foundWidget = widgets.value.find((element) => element.widget === widget)
+  const updateWidgetPosition = (uuid, position) => {
+    const foundWidget = widgets.value.find((element) => element.uuid === uuid)
 
     if (foundWidget) {
       foundWidget.x = position.x

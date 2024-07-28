@@ -2,6 +2,8 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 import WidgetCard from './WidgetCard.vue'
 
+const props = defineProps(['widgetData'])
+
 const currentDate = ref(null)
 const currentTime = ref(null)
 
@@ -34,8 +36,8 @@ onUnmounted(() => {
 
 <template>
   <WidgetCard
-    id="clock"
     class="h-40 w-48 flex flex-col items-center justify-center gap-1 bg-gradient-to-br from-teal-500 to-emerald-600"
+    :widget-data="props.widgetData"
   >
     <p class="text-lg font-semibold select-none">{{ currentDate }}</p>
     <p class="text-3xl font-extrabold select-none">{{ currentTime }}</p>

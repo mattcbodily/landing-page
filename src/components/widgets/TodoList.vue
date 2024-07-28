@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from 'uuid'
 
 import WidgetCard from './WidgetCard.vue'
 
+const props = defineProps(['widgetData'])
+
 const todoInput = ref('')
 const todoList = ref([])
 
@@ -25,8 +27,8 @@ const deleteTodo = (uuid) => {
 
 <template>
   <WidgetCard
-    id="todo-list"
     class="h-80 w-96 bg-gradient-to-br from-violet-500 to-indigo-600 space-y-2"
+    :widget-data="props.widgetData"
   >
     <form class="flex items-center" @submit.prevent>
       <input

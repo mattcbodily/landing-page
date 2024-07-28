@@ -2,6 +2,8 @@
 import { computed, onUnmounted, ref } from 'vue'
 import WidgetCard from './WidgetCard.vue'
 
+const props = defineProps(['widgetData'])
+
 const timeLeft = ref(900000)
 const isTimerActive = ref(false)
 
@@ -51,8 +53,8 @@ onUnmounted(() => {
 
 <template>
   <WidgetCard
-    id="pomodoro"
     class="h-40 w-48 flex flex-col justify-around bg-gradient-to-br from-cyan-500 to-sky-700"
+    :widget-data="props.widgetData"
   >
     <p class="text-3xl text-center font-extrabold">{{ formattedTimeLeft }}</p>
     <div class="space-y-2">

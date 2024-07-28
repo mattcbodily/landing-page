@@ -5,16 +5,17 @@ import { useWidgetStore } from '@/stores/widget'
 
 const widgetStore = useWidgetStore()
 
+const props = defineProps(['widgetData'])
+
 const card = ref(null)
 
 const { style } = useDraggable(card, {
   initialValue: {
-    // Fix this to access the widget by its name
-    x: widgetStore.widgets[0].x,
-    y: widgetStore.widgets[0].y,
+    x: props.widgetData.x,
+    y: props.widgetData.y,
   },
   onEnd: (position) => {
-    widgetStore.updateWidgetPosition(card.value.id, position)
+    widgetStore.updateWidgetPosition(props.widgetData.uuid, position)
   },
 })
 </script>
