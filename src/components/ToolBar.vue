@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import AddWidgetMenu from './AddWidgetMenu.vue'
+import AddWidgetMenu from './AddWidgetModal.vue'
 
 const showAddWidgetMenu = ref(false)
 </script>
@@ -45,6 +45,6 @@ const showAddWidgetMenu = ref(false)
         />
       </svg>
     </button>
-    <AddWidgetMenu v-show="showAddWidgetMenu" @add-widget="showAddWidgetMenu = false" />
   </div>
+  <AddWidgetMenu v-show="showAddWidgetMenu" @close-modal="showAddWidgetMenu = false" />
 </template>

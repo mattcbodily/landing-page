@@ -5,12 +5,12 @@ import { v4 as uuidv4 } from 'uuid'
 export const useWidgetStore = defineStore('widgets', () => {
   const widgets = useStorage('widget-store', [])
 
-  const addWidget = (widget) => {
+  const addWidget = (component) => {
     widgets.value.push({
       uuid: uuidv4(),
-      widget,
-      x: 16 * (widgets.value.length + 1),
-      y: 16 * (widgets.value.length + 1),
+      component,
+      x: 16,
+      y: 16,
     })
   }
 

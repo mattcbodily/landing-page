@@ -5,12 +5,29 @@ import { useWidgetStore } from '@/stores/widget'
 
 const widgetStore = useWidgetStore()
 
-const props = defineProps(['widgetData'])
+const props = defineProps({
+  isPreviewMode: {
+    type: Boolean,
+    default: false,
+  },
+  widgetData: {
+    type: Object,
+    default: function () {
+      return {
+        component: '',
+        uuid: '',
+        x: 0,
+        y: 0,
+      }
+    },
+  },
+})
 
 const card = ref(null)
 
 const { style } = useDraggable(card, {
   containerElement: document.querySelector('#widget-grid'),
+  disabled: props.isPreviewMode,
   initialValue: {
     x: props.widgetData.x,
     y: props.widgetData.y,
@@ -24,8 +41,9 @@ const { style } = useDraggable(card, {
 <template>
   <div
     ref="card"
-    class="fixed p-4 text-slate-100 rounded-md drop-shadow-md cursor-grab active:cursor-grabbing"
-    :style="style"
+    class="p-4 text-slate-100 rounded-md drop-shadow-md cursor-grab active:cursor-grabbing"
+    :class="!props.isPreviewMode ? 'fixed' : 'initial'"
+    :style="!props.isPreviewMode ? style : null"
   >
     <slot />
   </div>
