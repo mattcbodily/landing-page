@@ -27,17 +27,17 @@ const deleteTodo = (uuid) => {
 
 <template>
   <WidgetCard
-    class="h-80 w-[392px] bg-gradient-to-br from-violet-500 to-indigo-600 space-y-2"
+    class="h-80 w-[392px] space-y-2 bg-gradient-to-br from-violet-500 to-indigo-600"
     :widget-data="props.widgetData"
   >
     <form class="flex items-center" @submit.prevent>
       <input
         v-model="todoInput"
-        class="flex-1 h-12 px-4 rounded-l-md text-slate-950 drop-shadow-md"
+        class="h-12 flex-1 rounded-l-md px-4 text-slate-950 drop-shadow-md"
         placeholder="Add a todo"
       />
       <button
-        class="h-12 px-4 bg-gradient-to-br from-slate-600 to-slate-800 rounded-r-md drop-shadow-md"
+        class="h-12 rounded-r-md bg-gradient-to-br from-slate-600 to-slate-800 px-4 drop-shadow-md"
         type="submit"
         @click="addTodo"
         @submit="addTodo"
@@ -54,14 +54,14 @@ const deleteTodo = (uuid) => {
         </svg>
       </button>
     </form>
-    <div class="max-h-[230px] overflow-auto space-y-2 shadow-lg">
+    <div class="max-h-[230px] space-y-2 overflow-auto shadow-lg">
       <div
         v-for="todo in todoList"
-        class="h-12 px-4 flex items-center justify-between bg-gradient-to-br from-slate-600 to-slate-800 rounded-md drop-shadow-md"
+        class="flex h-12 items-center justify-between rounded-md bg-gradient-to-br from-slate-600 to-slate-800 px-4 drop-shadow-md"
         :key="todo.uuid"
       >
         <p class="text-lg">{{ todo.title }}</p>
-        <button class="hover:text-emerald-500 transition-colors" @click="deleteTodo(todo.uuid)">
+        <button class="transition-colors hover:text-emerald-500" @click="deleteTodo(todo.uuid)">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

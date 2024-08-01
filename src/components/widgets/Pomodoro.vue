@@ -53,10 +53,10 @@ onUnmounted(() => {
 
 <template>
   <WidgetCard
-    class="h-40 w-48 flex flex-col justify-around bg-gradient-to-br from-cyan-500 to-sky-700"
+    class="flex h-40 w-48 flex-col justify-around bg-gradient-to-br from-cyan-500 to-sky-700"
     :widget-data="props.widgetData"
   >
-    <p class="text-3xl text-center font-extrabold select-none">{{ formattedTimeLeft }}</p>
+    <p class="select-none text-center text-3xl font-extrabold">{{ formattedTimeLeft }}</p>
     <div class="space-y-2">
       <div class="flex gap-1">
         <button
@@ -79,7 +79,7 @@ onUnmounted(() => {
         </button>
       </div>
       <button
-        class="w-full p-1 rounded-md bg-gradient-to-br from-slate-600 to-slate-800 font-semibold"
+        class="w-full rounded-md bg-gradient-to-br from-slate-600 to-slate-800 p-1 font-semibold"
         @click="isTimerActiveClick"
       >
         {{ isTimerActive ? 'Pause' : 'Start' }}

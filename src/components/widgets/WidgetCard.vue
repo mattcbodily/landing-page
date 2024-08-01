@@ -41,7 +41,7 @@ const { style } = useDraggable(card, {
 <template>
   <div
     ref="card"
-    class="p-4 text-slate-100 rounded-md drop-shadow-md cursor-grab active:cursor-grabbing"
+    class="cursor-grab rounded-md p-4 text-slate-100 drop-shadow-md active:cursor-grabbing"
     :class="!props.isPreviewMode ? 'fixed' : 'initial'"
     :style="!props.isPreviewMode ? style : null"
   >

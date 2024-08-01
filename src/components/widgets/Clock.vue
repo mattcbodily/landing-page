@@ -36,10 +36,10 @@ onUnmounted(() => {
 
 <template>
   <WidgetCard
-    class="h-40 w-48 flex flex-col items-center justify-center gap-1 bg-gradient-to-br from-teal-500 to-emerald-600"
+    class="flex h-40 w-48 flex-col items-center justify-center gap-1 bg-gradient-to-br from-teal-500 to-emerald-600"
     :widget-data="props.widgetData"
   >
-    <p class="text-lg font-semibold select-none">{{ currentDate }}</p>
-    <p class="text-3xl font-extrabold select-none">{{ currentTime }}</p>
+    <p class="select-none text-lg font-semibold">{{ currentDate }}</p>
+    <p class="select-none text-3xl font-extrabold">{{ currentTime }}</p>
   </WidgetCard>
 </template>
